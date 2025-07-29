@@ -1,0 +1,1029 @@
+@import url('https://fonts.googleapis.com/css2?family=poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+:root{
+    --primary-black: #000000;
+    --sccondary-black: #101010;
+    --primary-white: #FFFFFF;
+    --secondary-white: #F0F0F0;
+    --primary-pink:#EFC3C5;
+    --primary-pista: #E2F2B0;
+}
+
+.bg-dark-black{
+    background: var(--primary-black);
+}
+.bg-light-black{
+    background: var(--secondary-black) ;
+}
+
+.main-container{
+    min-height: 100vh;
+    isolation: isolate;
+    position: relative;
+}
+.main-container::before{
+  content: "";
+  position:absolute;
+  bottom: 0;
+  width: 30vh;
+  background: var(--primary-black);
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-white);
+    width: 20rem;
+    height: 25rem;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -2;
+
+}
+
+.container{
+    width:100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 2rem;
+}
+header{
+    height: 14vh;
+}
+
+  .logo{
+    width: 1.3rem;
+    aspect-ratio: 1;
+    background: var(--primary-white);
+    transform: rotate(45deg);
+    position:relative;
+
+  }
+  .logo::before{  /* Pseudo-Elements */
+    content: "";
+    position: absolute;
+    width: 1.4rem;
+    aspect-ratio: 1;
+    border: .1rem solid var(--primary-white);
+
+  }
+
+  .navbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    padding: 0 1rem;
+  }
+
+  li{
+      list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+
+  .navlist{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .navlinks{
+    color: var(--secondary-white);
+    font-size: 1rem;
+  }
+  .navlinks:hover,.active{
+    color: var(--primary-pink);
+  }
+   .hamburger{
+    display: none;
+   }
+  .line{
+    width: 2.2rem;
+    height: .2rem;
+    background: var(--primary-white);
+    margin: .35rem;
+  }
+
+.hero-section{
+    height:calc(100vh - 14vh);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.left-container{
+    align-self: center;
+    flex: 1;
+    max-width: 400px;
+}
+
+h1{
+   font-size: 4.1rem;
+   text-transform: uppercase;
+   color: var(--primary-white);
+   line-height: 1.2;
+   margin-bottom: 1rem;
+}
+
+.middle-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+  max-width: 350px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+.right-container{
+   align-self: center;
+   flex: 1;
+   max-width: 400px;
+   margin-bottom: 2rem;
+}
+ .para{
+     font-size: 1rem;
+     color: var(--primary-white);
+     line-height: 1.8rem;
+     padding: 1rem 0 2.5rem 0;
+     text-align: justify;
+     hyphens: auto;
+     word-spacing: 0.1em;
+ }
+ [data-type="border-para"]{
+     border-right: .5rem solid var(--primary-pista);
+     text-align: justify;
+     padding-right: 2rem;
+     line-height: 1.8rem;
+ }
+
+ .scroll-container{
+   white-space: nowrap; /* nowrap ka  matlab jitne bhi element ayaga wo inline ho jayega */ 
+   overflow-x: hidden;
+   padding: 2rem 0;
+ }
+ .scroll{
+     display: inline-block;
+     animation: 10s scroll infinite linear;
+ }
+ h2{  /* h2 actually block element hai jo pure line occupy karega */
+  color: var(--primary-pista);
+  font-size: 4rem;
+  font-family: 'Allura', cursive;
+  display: inline-block;
+  margin: 0 2rem; /* 0 ka matlab top or bottom se 0rem  and left and right se 2rem */
+ }
+
+ [data-type="scroll-txt"]{
+  color: var(--primary-white);
+  margin: 0 2rem;
+ }
+ .break{
+  width: 2rem;
+  aspect-ratio: 1;
+  background: var(--primary-pista);
+  border-radius:50%;
+  display: inline-block;
+ }
+
+ @keyframes scroll{
+  from{
+      transform: translateX(0);
+  }
+  to{
+      transform: translateX(-100%);
+  }
+ }
+
+
+ /* Story Section */
+
+ .product-container{
+  height: 35rem;
+
+ }
+
+ .row{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+ }
+
+ .section{
+  padding: 5rem 0;
+ }
+
+ .content{
+  width: 100%;
+  max-width: 550px;
+ }
+
+ .primary-btn{
+  color: var(--primary-black);
+  background: var(--primary-pista);
+  padding: .8rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background .3s ease;
+
+ }
+
+ .primary-btn:hover{
+      background: var(--primary-pink);
+ }
+
+
+ /*--Selling Products */
+
+ .column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+ }
+ 
+ .products-row{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 2rem auto;
+ }
+ 
+ .card-product{
+   height: 20rem;
+ }
+
+ .grid-card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+ }
+
+ .card{
+   background: var(--secondary-black);
+   padding: 2rem 0;
+   border: .1rem solid rgb(51 , 51 ,51);
+   transition: transform .3s ease-in-out; /* ease-in-out 3s ka matlab huver effect jo kara wo first main thoda first last mein aa kar slow ho jayega */
+ }
+
+ .card:hover{
+  background: rgb(51,51,51);
+  transform: scale(1.05);/* scale matlab humne jo picture mein hover effect laga aa hai wo thoda bora karne ke liye transform mein scale ka property laga diya */
+
+ }
+
+ h4,.price{
+  color: var(--primary-white);
+  font-size: 1.2rem;
+ }
+
+ .card-info{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+ }
+
+ /* Our Services */
+
+ h3{
+  font-size: 1.5rem;
+  color: var(--primary-white);
+ }
+
+ .services-grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+ }
+
+ .services-card{
+  padding: 2rem;
+  position: relative;
+  isolation: isolate;
+  background: var(--sccondary-black);
+  border: .1rem solid rgb(51, 51, 51);
+  border-radius: 10px;
+  transition: all .3s ease;
+ }
+
+ .services-card::before{ /* it is Pseudo Element */
+  content: "";
+  position : absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: .3rem;
+  background: var(--primary-pista);
+  z-index: -1;
+  transition: .3s all;
+  border-radius: 10px 10px 0 0;
+ }
+
+ .services-card:hover::before{
+  height: 100%;
+  border-radius: 10px;
+ }
+
+ .services-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(226, 242, 176, 0.2);
+ }
+
+ .services-card:hover.services-card *{
+   color: var(--primary-black);
+ }
+
+
+ /* Sale Section */
+ .sale-product{
+  height: 14rem;
+ }
+
+ .sale-heading{
+  color:var(--primary-pink);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+ }
+
+ .sale-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: .8rem;
+ }
+
+ .sale-txt{
+  font-size: 2.2rem;
+ }
+
+ .celebrate{
+  position: relative;
+  isolation:isolate;
+  overflow: hidden;
+ }
+ .glow1,.glow2{
+  position: absolute;
+  width: 15rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(150px);
+ z-index: -1;
+ }
+
+ .glow1{
+  top: 50px;
+  left:50px;
+  background: orangered;
+ }
+
+ .glow2{
+  bottom:50;
+  right:50px;
+  background: blue;
+ }
+
+
+ /* Gallery Section */
+
+ .gallery-container{ 
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+ }
+
+ .image-gallery{
+  height: 25rem;
+  width: 100%;
+ }
+
+ .image-gallery img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* object fit ka matlab apna apni width and height le lega and ek contain mein cover ho jayega */
+ }
+
+ /* Footer section */
+
+ .footer-txt{
+  color:var(--primary-white);
+  font-size: 1.15rem;
+  text-align: center;
+ }
+
+
+ /* Media Queries */
+
+/* Extra Large Desktop (1920px and above) */
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+  h1 {
+    font-size: 5.5rem;
+  }
+  h2 {
+    font-size: 5rem;
+  }
+  .grid-card-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+  }
+  .products-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+  .services-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+  .gallery-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Large Desktop (1440px to 1919px) */
+@media screen and (max-width: 1919px) and (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 4.5rem;
+  }
+  .grid-card-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+  }
+  .products-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+  }
+  .services-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+  }
+  .gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop/Laptop (1024px to 1439px) */
+@media screen and (max-width: 1439px) and (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 1.5rem;
+  }
+  h1 {
+    font-size: 3.8rem;
+  }
+  .grid-card-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .products-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .services-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet (768px to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+    min-height: calc(100vh - 14vh);
+    padding: 3rem 0;
+  }
+  
+  .left-container {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .middle-container {
+    max-width: 300px;
+    height: 300px;
+  }
+  
+  h1 {
+    font-size: 3.2rem;
+  }
+  
+  .right-container {
+    align-self: center;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+  
+  [data-type="border-para"] {
+    border-right: none;
+    border-bottom: .5rem solid var(--primary-pista);
+    text-align: justify;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .grid-card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .products-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .services-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sale-txt {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Large (481px to 767px) */
+@media screen and (max-width: 767px) and (min-width: 481px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .navlist {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    background: var(--primary-black);
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    z-index: 10;
+  }
+  
+  .navlist-active {
+    transform: translateX(0);
+  }
+  
+  .navlinks {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  
+  .logo {
+    z-index: 15;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 15;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+    min-height: calc(100vh - 14vh);
+    padding: 2rem 0;
+  }
+  
+  .left-container {
+    text-align: center;
+    max-width: 100%;
+    order: 1;
+  }
+  
+  .middle-container {
+    max-width: 300px;
+    height: 300px;
+    order: 2;
+  }
+  
+  .right-container {
+    display: block;
+    align-self: center;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    order: 3;
+  }
+  
+  [data-type="border-para"] {
+    border-right: none;
+    border-bottom: .4rem solid var(--primary-pista);
+    text-align: justify;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 3.2rem;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .product-container {
+    height: 25rem;
+  }
+  
+  .grid-card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .products-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .services-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+  
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .sale-product {
+    height: 12rem;
+  }
+  
+  .sale-txt {
+    font-size: 1.8rem;
+  }
+  
+  .para {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+  }
+}
+
+/* Mobile Small (320px to 480px) - iPhone SE and similar */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .navlist {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    background: var(--primary-black);
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    z-index: 10;
+  }
+  
+  .navlist-active {
+    transform: translateX(0);
+  }
+  
+  .navlinks {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+  
+  .logo {
+    z-index: 15;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 15;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+    min-height: calc(100vh - 14vh);
+    padding: 2rem 0;
+  }
+  
+  .left-container {
+    margin-top: 1rem;
+    text-align: center;
+    max-width: 100%;
+    order: 1;
+  }
+  
+  .middle-container {
+    height: 22rem;
+    margin: auto;
+    max-width: 250px;
+    order: 2;
+  }
+  
+  .right-container {
+    display: block;
+    align-self: center;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    order: 3;
+  }
+  
+  [data-type="border-para"] {
+    border-right: none;
+    border-bottom: .3rem solid var(--primary-pista);
+    text-align: justify;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 2.9rem;
+  }
+  
+  .para, .footer-txt {
+    font-size: .95rem;
+    line-height: 1.5rem;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .product-container {
+    height: 20rem;
+  }
+  
+  .sale-product {
+    height: 10rem;
+  }
+  
+  .grid-card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .products-row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .services-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .sale-txt {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  
+  .card-product {
+    height: 18rem;
+  }
+  
+  .image-gallery {
+    height: 20rem;
+  }
+  
+  .services-card {
+    padding: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media screen and (max-width: 319px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .navlist {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    background: var(--primary-black);
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    z-index: 10;
+  }
+  
+  .navlist-active {
+    transform: translateX(0);
+  }
+  
+  .navlinks {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+  
+  .logo {
+    z-index: 15;
+  }
+  
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 15;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    min-height: calc(100vh - 14vh);
+    padding: 1.5rem 0;
+  }
+  
+  .left-container {
+    text-align: center;
+    max-width: 100%;
+    order: 1;
+  }
+  
+  .middle-container {
+    height: 18rem;
+    max-width: 200px;
+    order: 2;
+  }
+  
+  .right-container {
+    display: block;
+    align-self: center;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    order: 3;
+  }
+  
+  [data-type="border-para"] {
+    border-right: none;
+    border-bottom: .2rem solid var(--primary-pista);
+    text-align: justify;
+    padding-right: 0.5rem;
+    padding-bottom: 0.8rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  .para, .footer-txt {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .product-container {
+    height: 16rem;
+  }
+  
+  .sale-product {
+    height: 8rem;
+  }
+  
+  .grid-card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  
+  .products-row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  
+  .services-grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  
+  .gallery-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .sale-txt {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  
+  .card-product {
+    height: 16rem;
+  }
+  
+  .image-gallery {
+    height: 18rem;
+  }
+  
+  .services-card {
+    padding: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+}
